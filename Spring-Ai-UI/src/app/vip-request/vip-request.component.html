@@ -1,0 +1,88 @@
+<!-- 
+
+<div class="container">
+  <h1>VIP Request Form</h1>
+  <form [formGroup]="vipRequestForm" (ngSubmit)="submitRequest()">
+    <div class="form-group">
+      <label for="vipName">VIP Name:</label>
+      <input id="vipName" formControlName="vipName" type="text" placeholder="Enter VIP name" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="preference">Preference:</label>
+      <input id="preference" formControlName="preference" type="text" placeholder="Enter preference" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="requestDetails">Request Details:</label>
+      <textarea id="requestDetails" formControlName="requestDetails" placeholder="Enter request details" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="postalCode">Postal Code:</label>
+      <input id="postalCode" formControlName="postalCode" type="text" placeholder="Enter postal code" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input id="date" formControlName="date" type="date" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Time:</label>
+      <input id="time" formControlName="time" type="time" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!vipRequestForm.valid">Submit Request</button>
+  </form>
+
+  <div *ngIf="volunteers.length > 0" class="volunteers-list">
+    <h3>Available Volunteers:</h3>
+    <ul>
+      <li *ngFor="let volunteer of volunteers">
+        {{volunteer.name}} - {{volunteer.availability}} - {{volunteer.postcode}}
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="container">
+  <h1>Request Volunteer</h1>
+<form [formGroup]="vipRequestForm" (ngSubmit)="submitRequest()">
+  <div>
+    <label for="vipName">VIP Name</label>
+    <input id="vipName" formControlName="vipName" type="text">
+  </div>
+  <div>
+    <label for="preference">Preference</label>
+    <input id="preference" formControlName="preference" type="text">
+  </div>
+  <div>
+    <label for="requestDetails">Request Details</label>
+    <input id="requestDetails" formControlName="requestDetails" type="text">
+  </div>
+  <div>
+    <label for="postalCode">Postal Code</label>
+    <input id="postalCode" formControlName="postalCode" type="text">
+  </div>
+  <div>
+    <label for="date">Date</label>
+    <input id="date" formControlName="date" type="date">
+  </div>
+  <div>
+    <label for="time">Time</label>
+    <input id="time" formControlName="time" type="time">
+  </div>
+  <button type="submit">Find Volunteers</button>
+</form>
+
+<div *ngIf="volunteers.length > 0">
+  <h3>Matched Volunteers</h3>
+  <ul>
+    <li *ngFor="let volunteer of volunteers">{{ volunteer.name }}</li>
+  </ul>
+</div>
+<div *ngIf="volunteers.length === 0">
+  <p>No volunteers found</p>
+</div>
+</div>

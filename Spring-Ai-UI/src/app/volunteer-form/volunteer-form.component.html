@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Add Volunteer</h1>
+    <form [formGroup]="volunteerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" type="text" placeholder="Enter your name">
+        <div *ngIf="volunteerForm.get('name')?.invalid && volunteerForm.get('name')?.touched">
+          <small class="error">Name is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="availability">Availability</label>
+        <input id="availability" formControlName="availability" type="text" placeholder="Enter availability">
+        <div *ngIf="volunteerForm.get('availability')?.invalid && volunteerForm.get('availability')?.touched">
+          <small class="error">Availability is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="availabilityDate">Availability Date</label>
+        <input id="availabilityDate" formControlName="availabilityDate" type="date">
+        <div *ngIf="volunteerForm.get('availabilityDate')?.invalid && volunteerForm.get('availabilityDate')?.touched">
+          <small class="error">Availability Date is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="availabilityTime">Availability Time</label>
+        <input id="availabilityTime" formControlName="availabilityTime" type="time">
+        <div *ngIf="volunteerForm.get('availabilityTime')?.invalid && volunteerForm.get('availabilityTime')?.touched">
+          <small class="error">Availability Time is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="postcode">Postcode</label>
+        <input id="postcode" formControlName="postcode" type="text" placeholder="Enter postcode">
+        <div *ngIf="volunteerForm.get('postcode')?.invalid && volunteerForm.get('postcode')?.touched">
+          <small class="error">Postcode is required.</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="volunteerForm.invalid">Submit</button>
+    </form>
+  </div>
+  
